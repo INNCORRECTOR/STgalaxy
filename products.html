@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Products - ST Galaxy</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      background:#0f172a;
+      color:white;
+    }
+
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 10%;
+      background:#111827;
+      border-bottom:1px solid #1e293b;
+    }
+
+    nav h1{
+      color:#38bdf8;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      margin-left:20px;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:#38bdf8;
+    }
+
+    .container{
+      padding:50px 10%;
+    }
+
+    .title{
+      text-align:center;
+      margin-bottom:50px;
+    }
+
+    .title h2{
+      font-size:42px;
+      margin-bottom:10px;
+    }
+
+    .products{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .product-card{
+      background:#1e293b;
+      border-radius:12px;
+      overflow:hidden;
+      transition:0.3s;
+    }
+
+    .product-card:hover{
+      transform:translateY(-5px);
+    }
+
+    .product-card img{
+      width:100%;
+      height:250px;
+      object-fit:cover;
+    }
+
+    .product-info{
+      padding:20px;
+    }
+
+    .product-info h3{
+      margin-bottom:10px;
+    }
+
+    .price{
+      color:#38bdf8;
+      font-size:22px;
+      margin-bottom:15px;
+      font-weight:bold;
+    }
+
+    .buy-btn{
+      display:inline-block;
+      padding:12px 20px;
+      background:#38bdf8;
+      color:white;
+      text-decoration:none;
+      border-radius:8px;
+      transition:0.3s;
+    }
+
+    .buy-btn:hover{
+      background:#0ea5e9;
+    }
+
+    footer{
+      text-align:center;
+      padding:20px;
+      background:#111827;
+      margin-top:50px;
+      color:#94a3b8;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <h1>ST Galaxy</h1>
+
+    <div>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+    </div>
+  </nav>
+
+  <section class="container">
+
+    <div class="title">
+      <h2>Our Products</h2>
+      <p>Latest football products and sports accessories.</p>
+    </div>
+
+    <div class="products">
+
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1511886929837-354d827aae26?q=80&w=1200&auto=format&fit=crop" alt="Jersey">
+
+        <div class="product-info">
+          <h3>Football Jersey</h3>
+          <div class="price">₹999</div>
+
+          <a href="#" class="buy-btn">
+            Buy Now
+          </a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1200&auto=format&fit=crop" alt="Shoes">
+
+        <div class="product-info">
+          <h3>Football Shoes</h3>
+          <div class="price">₹2499</div>
+
+          <a href="#" class="buy-btn">
+            Buy Now
+          </a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1575361204480-aadea25e6e68?q=80&w=1200&auto=format&fit=crop" alt="Ball">
+
+        <div class="product-info">
+          <h3>Match Football</h3>
+          <div class="price">₹1499</div>
+
+          <a href="#" class="buy-btn">
+            Buy Now
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer>
+    © 2026 ST Galaxy. All rights reserved.
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ST Galaxy</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      background:#0f172a;
+      color:white;
+    }
+
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 10%;
+      background:#111827;
+      border-bottom:1px solid #1e293b;
+    }
+
+    nav h1{
+      color:#38bdf8;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      margin-left:20px;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:#38bdf8;
+    }
+
+    .hero{
+      height:90vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:20px;
+    }
+
+    .hero h2{
+      font-size:55px;
+      margin-bottom:20px;
+    }
+
+    .hero p{
+      max-width:700px;
+      line-height:1.7;
+      color:#cbd5e1;
+      margin-bottom:30px;
+    }
+
+    .btn{
+      padding:14px 30px;
+      background:#38bdf8;
+      color:white;
+      text-decoration:none;
+      border-radius:8px;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:#0ea5e9;
+    }
+
+    .features{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+      padding:50px 10%;
+    }
+
+    .card{
+      background:#1e293b;
+      padding:30px;
+      border-radius:12px;
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-5px);
+    }
+
+    .card h3{
+      margin-bottom:15px;
+      color:#38bdf8;
+    }
+
+    footer{
+      text-align:center;
+      padding:20px;
+      background:#111827;
+      margin-top:50px;
+      color:#94a3b8;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <h1>ST Galaxy</h1>
+
+    <div>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h2>Welcome to ST Galaxy</h2>
+
+    <p>
+      Simple football and sports ecommerce website.
+      Showcase products, jerseys, accessories and more.
+      Built with pure HTML, CSS and JavaScript because sometimes
+      simplicity is healthier than summoning 47 npm packages.
+    </p>
+
+    <a href="products.html" class="btn">
+      View Products
+    </a>
+  </section>
+
+  <section class="features">
+
+    <div class="card">
+      <h3>Football Jerseys</h3>
+      <p>
+        Premium quality football kits and jerseys.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Sports Accessories</h3>
+      <p>
+        Shoes, gloves, socks and training accessories.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Simple Ordering</h3>
+      <p>
+        Easy payment screenshot upload system coming soon.
+      </p>
+    </div>
+
+  </section>
+
+  <footer>
+    © 2026 ST Galaxy. All rights reserved.
+  </footer>
+
+</body>
+</html>
