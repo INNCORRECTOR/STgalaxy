@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
   <title>ST Galaxy — Phone Accessories | Nagaland</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -133,7 +133,7 @@
       mask-image:radial-gradient(ellipse 70% 60% at 50% 40%, black 20%, transparent 75%);
     }
 
-    body > *:not(.bg-orbs):not(.bg-grid){
+    body > *:not(.bg-orbs):not(.bg-grid):not(.mobile-tabbar):not(#mobile-tabbar){
       position:relative;
       z-index:1;
     }
@@ -199,7 +199,7 @@
       letter-spacing:0.04em;
     }
 
-    nav{
+    body > nav:first-of-type{
       display:flex;
       justify-content:space-between;
       align-items:center;
@@ -218,7 +218,7 @@
       gap:12px;
     }
 
-    nav .brand{
+    body > nav:first-of-type .brand{
       display:flex;
       align-items:center;
       gap:12px;
@@ -226,7 +226,7 @@
       color:inherit;
     }
 
-    nav .brand h1{
+    body > nav:first-of-type .brand h1{
       font-size:1.2rem;
       background:linear-gradient(90deg, var(--cyan), var(--violet));
       -webkit-background-clip:text;
@@ -241,7 +241,7 @@
       flex-shrink:0;
     }
 
-    nav a{
+    body > nav:first-of-type a{
       color:var(--text-muted);
       text-decoration:none;
       margin-left:0;
@@ -251,7 +251,7 @@
       letter-spacing:0.08em;
     }
 
-    nav a:hover{
+    body > nav:first-of-type a:hover{
       color:var(--cyan);
       text-shadow:0 0 12px rgba(0,232,255,0.5);
     }
@@ -280,6 +280,14 @@
       display:block;
       position:absolute;
       inset:0;
+    }
+
+    .img-slot picture{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      display:block;
     }
 
     .img-slot .slot-hint{
@@ -384,14 +392,22 @@
 
     /* Sponsorship */
     .sponsor{
-      padding:40px 8%;
-      max-width:1000px;
+      padding:24px 20px;
+      max-width:880px;
       margin:0 auto;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      text-align:center;
     }
 
     .sponsor .img-slot{
-      min-height:220px;
-      margin-bottom:20px;
+      width:100%;
+      max-width:720px;
+      min-height:unset;
+      margin:0 auto 16px;
+      border-radius:16px;
+      overflow:hidden;
     }
 
     .sponsor-caption{
@@ -588,13 +604,27 @@
       box-shadow:var(--glow-cyan), 0 16px 40px rgba(0,0,0,0.4);
     }
 
-    .social-link .img-slot{
-      height:100px;
-      margin-bottom:12px;
-      border-radius:14px;
+    .social-icon{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      width:88px;
+      height:88px;
+      margin:0 auto 14px;
+      border-radius:16px;
+      background:rgba(0,0,0,0.35);
+      border:1px solid rgba(255,255,255,0.1);
     }
 
-    .social-link span{
+    .social-icon img{
+      width:44px;
+      height:44px;
+      object-fit:contain;
+      display:block;
+      position:static;
+    }
+
+    .social-link span:last-child{
       color:var(--cyan);
       font-weight:600;
       font-family:'Orbitron', sans-serif;
@@ -603,7 +633,7 @@
       text-transform:uppercase;
     }
 
-    .social-link:hover span{
+    .social-link:hover span:last-child{
       text-shadow:0 0 16px rgba(0,232,255,0.6);
     }
 
@@ -630,14 +660,14 @@
         --glow-violet:0 0 22px rgba(139,92,246,0.25);
       }
 
-      nav{
+      body > nav:first-of-type{
         margin:8px 12px 0;
         padding:12px 16px;
         width:calc(100% - 24px);
         max-width:100%;
       }
 
-      nav .brand h1{
+      body > nav:first-of-type .brand h1{
         font-size:1rem;
       }
 
@@ -651,7 +681,7 @@
         gap:10px;
       }
 
-      nav a{
+      body > nav:first-of-type a{
         font-size:0.75rem;
         letter-spacing:0.05em;
       }
@@ -689,7 +719,7 @@
       }
 
       .cta-card .img-slot{
-        height:140px;
+        height:210px;
       }
 
       .cta-card .btn-label{
@@ -698,11 +728,12 @@
       }
 
       .sponsor{
-        padding:24px 12px;
+        padding:20px 14px;
       }
 
       .sponsor .img-slot{
-        min-height:160px;
+        min-height:unset;
+        border-radius:14px;
       }
 
       .sponsor-caption{
@@ -751,16 +782,35 @@
 
       .social{
         padding:28px 12px 40px;
-        flex-direction:column;
+        flex-direction:row;
+        flex-wrap:nowrap;
         align-items:stretch;
-        gap:16px;
+        gap:12px;
         max-width:100%;
       }
 
       .social-link{
-        flex:1 1 auto;
-        max-width:100%;
-        width:100%;
+        flex:1 1 0;
+        min-width:0;
+        max-width:none;
+        width:auto;
+        padding:16px 10px 18px;
+      }
+
+      .social-icon{
+        width:72px;
+        height:72px;
+        margin-bottom:10px;
+      }
+
+      .social-icon img{
+        width:36px;
+        height:36px;
+      }
+
+      .social-link span:last-child{
+        font-size:0.72rem;
+        letter-spacing:0.06em;
       }
 
       footer{
@@ -791,13 +841,13 @@
 
     /* Phone */
     @media (max-width: 480px){
-      nav{
+      body > nav:first-of-type{
         flex-direction:column;
         align-items:stretch;
         gap:10px;
       }
 
-      nav .brand{
+      body > nav:first-of-type .brand{
         justify-content:center;
       }
 
@@ -847,6 +897,7 @@
     }
 
   </style>
+  <link rel="stylesheet" href="css/site.css"/>
 </head>
 <body>
 
@@ -858,7 +909,10 @@
   <nav>
     <a href="index.html" class="brand">
       <div class="img-slot logo-slot">
-        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=200&amp;h=200&amp;fit=crop&amp;q=80" alt="ST Galaxy logo" loading="eager" onload="this.parentElement.classList.add('has-image')" onerror="this.style.display='none'"/>
+        <picture>
+          <source srcset="images/staticunchange/logo.webp" type="image/webp"/>
+          <img src="images/staticunchange/logo.jpeg" alt="ST Galaxy logo" loading="eager" onload="this.closest('.img-slot').classList.add('has-image')" onerror="this.style.display='none'"/>
+        </picture>
         <span class="slot-hint">Logo</span>
       </div>
       <h1>ST Galaxy</h1>
@@ -866,6 +920,7 @@
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="products.html">Products</a>
+      <a href="about.html">About</a>
     </div>
   </nav>
 
@@ -877,14 +932,20 @@
       <div class="cta-row">
       <a href="products.html" class="cta-card glass-card">
         <div class="img-slot">
-          <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=800&amp;q=80&amp;auto=format&amp;fit=crop" alt="Shop retail" loading="lazy" onload="this.parentElement.classList.add('has-image')" onerror="this.style.display='none'"/>
+          <picture>
+            <source srcset="images/staticunchange/retail.webp" type="image/webp"/>
+            <img src="images/staticunchange/retail.jpeg" alt="Shop retail phone accessories" loading="lazy" onload="this.closest('.img-slot').classList.add('has-image')" onerror="this.style.display='none'"/>
+          </picture>
           <span class="slot-hint">Retail</span>
         </div>
         <span class="btn-label">SHOP RETAIL PRICES</span>
       </a>
-      <a href="products.html" class="cta-card glass-card">
+      <a href="wholesale.html" class="cta-card glass-card cta-wholesale-home">
         <div class="img-slot">
-          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&amp;q=80&amp;fit=crop" alt="Wholesale rates" loading="lazy" onload="this.parentElement.classList.add('has-image')" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&amp;q=80&amp;fit=crop';this.parentElement.classList.add('has-image')"/>
+          <picture>
+            <source srcset="images/staticunchange/wholesale.webp" type="image/webp"/>
+            <img src="images/staticunchange/wholesale.png" alt="Wholesale phone accessories bulk supply" loading="lazy" onload="this.closest('.img-slot').classList.add('has-image')" onerror="this.style.display='none'"/>
+          </picture>
           <span class="slot-hint">Wholesale</span>
         </div>
         <span class="btn-label">GET WHOLESALE RATES</span>
@@ -895,12 +956,12 @@
 
   <section class="sponsor">
     <div class="img-slot">
-      <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=1000&amp;q=80&amp;fit=crop" alt="Patkai Christian College Freshers Day" loading="lazy" onload="this.parentElement.classList.add('has-image')" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1000&amp;q=80&amp;fit=crop';this.parentElement.classList.add('has-image')"/>
+      <img src="images/staticunchange/collabwithpatkai.jpeg" alt="Patkai Christian College Freshers Day — ST Galaxy sponsorship" loading="lazy" onload="this.parentElement.classList.add('has-image')" onerror="this.style.display='none'"/>
       <span class="slot-hint">Sponsorship</span>
     </div>
     <p class="glass sponsor-caption">
       Proud To Have Sponsored <strong>Patkai Christian College's Freshers Day</strong>,
-      Golden Jubilee Edition (1994–2024)
+      Golden Jubilee Edition (1974–2024)
     </p>
   </section>
 
@@ -943,24 +1004,23 @@
 
   <section class="social">
     <a href="https://www.instagram.com/st.galaxyz?igsh=MWZjZjJ0NnpvMjJndw==" class="social-link glass" target="_blank" rel="noopener noreferrer">
-      <div class="img-slot">
-        <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=600&amp;q=80&amp;auto=format&amp;fit=crop" alt="Instagram" loading="lazy" onload="this.parentElement.classList.add('has-image')" onerror="this.style.display='none'"/>
-        <span class="slot-hint">Instagram</span>
-      </div>
+      <span class="social-icon" aria-hidden="true">
+        <img src="https://cdn.simpleicons.org/instagram/E4405F" alt="" width="44" height="44" loading="lazy"/>
+      </span>
       <span>Instagram</span>
     </a>
     <a href="https://wa.me/919089030805" class="social-link glass" target="_blank" rel="noopener noreferrer">
-      <div class="img-slot">
-        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&amp;q=80&amp;fit=crop" alt="WhatsApp" loading="lazy" onload="this.parentElement.classList.add('has-image')" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=600&amp;q=80&amp;fit=crop';this.parentElement.classList.add('has-image')"/>
-        <span class="slot-hint">WhatsApp</span>
-      </div>
+      <span class="social-icon" aria-hidden="true">
+        <img src="https://cdn.simpleicons.org/whatsapp/25D366" alt="" width="44" height="44" loading="lazy"/>
+      </span>
       <span>WhatsApp</span>
     </a>
   </section>
 
-  <footer>
-    &copy; 2026 ST Galaxy. All rights reserved.
-  </footer>
+  <footer id="site-footer"></footer>
 
+  <nav id="mobile-tabbar" class="mobile-tabbar" aria-label="Mobile navigation"></nav>
+
+  <script src="js/site.js"></script>
 </body>
 </html>

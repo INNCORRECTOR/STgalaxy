@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
   <title>Products - ST Galaxy</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preload" href="data/products.json" as="fetch" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600&family=Orbitron:wght@500;700&display=swap" rel="stylesheet"/>
-
   <style>
     :root{
       --bg:#020203;
@@ -73,9 +73,9 @@
       mask-image:radial-gradient(ellipse 70% 50% at 50% 30%, black, transparent 70%);
     }
 
-    body > *:not(.bg-orbs):not(.bg-grid){ position:relative; z-index:1; }
+    body > *:not(.bg-orbs):not(.bg-grid):not(.mobile-tabbar):not(#mobile-tabbar){ position:relative; z-index:1; }
 
-    nav{
+    body > nav:first-of-type{
       display:flex;
       justify-content:space-between;
       align-items:center;
@@ -89,7 +89,7 @@
       box-shadow:inset 0 1px 0 rgba(255,255,255,0.1), 0 12px 40px rgba(0,0,0,0.5), var(--glow-cyan);
     }
 
-    nav h1{
+    body > nav:first-of-type h1{
       font-family:'Orbitron', sans-serif;
       font-size:1.2rem;
       background:linear-gradient(90deg, var(--cyan), var(--violet));
@@ -104,7 +104,7 @@
       gap:16px;
     }
 
-    nav a{
+    body > nav:first-of-type a{
       color:var(--text-muted);
       text-decoration:none;
       margin-left:0;
@@ -114,7 +114,7 @@
       font-size:0.9rem;
     }
 
-    nav a:hover{
+    body > nav:first-of-type a:hover{
       color:var(--cyan);
       text-shadow:0 0 12px rgba(0,232,255,0.5);
     }
@@ -125,7 +125,7 @@
 
     .title{
       text-align:center;
-      margin-bottom:50px;
+      margin-bottom:28px;
       padding:32px 24px;
       border-radius:20px;
       background:rgba(255,255,255,0.04);
@@ -133,6 +133,14 @@
       -webkit-backdrop-filter:var(--glass-blur);
       border:1px solid var(--glass-border);
       box-shadow:inset 0 1px 0 rgba(255,255,255,0.1), 0 12px 36px rgba(0,0,0,0.35);
+    }
+
+    .title .subtitle{
+      color:var(--cyan);
+      font-size:0.85rem;
+      letter-spacing:0.06em;
+      text-transform:uppercase;
+      margin-bottom:12px;
     }
 
     .title p{
@@ -149,10 +157,61 @@
       color:transparent;
     }
 
+    .category-heading{
+      font-family:'Orbitron', sans-serif;
+      text-align:center;
+      font-size:1.5rem;
+      letter-spacing:0.12em;
+      margin-bottom:24px;
+      color:var(--text);
+    }
+
+    .category-tabs{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:10px;
+      margin-bottom:36px;
+    }
+
+    .category-tab{
+      font-family:'Exo 2', sans-serif;
+      font-size:0.85rem;
+      letter-spacing:0.04em;
+      text-transform:uppercase;
+      padding:10px 18px;
+      border-radius:999px;
+      border:1px solid var(--glass-border);
+      background:rgba(255,255,255,0.04);
+      color:var(--text-muted);
+      cursor:pointer;
+      transition:0.25s;
+    }
+
+    .category-tab:hover{
+      color:var(--cyan);
+      border-color:rgba(0,232,255,0.35);
+    }
+
+    .category-tab.active{
+      color:#030304;
+      font-weight:600;
+      border-color:transparent;
+      background:linear-gradient(135deg, var(--cyan), var(--violet));
+      box-shadow:var(--glow-cyan);
+    }
+
     .products{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
       gap:25px;
+    }
+
+    .empty-state{
+      grid-column:1 / -1;
+      text-align:center;
+      color:var(--text-muted);
+      padding:40px 20px;
     }
 
     .product-card{
@@ -192,10 +251,70 @@
       opacity:1;
     }
 
+    .product-image-wrap{
+      position:relative;
+      background:rgba(0,0,0,0.25);
+    }
+
+    .product-image-link,
+    .product-card-link{
+      display:block;
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .product-card-link:hover h3{
+      color:var(--cyan);
+    }
+
+    .product-card-link .product-info{
+      cursor:pointer;
+    }
+
+    .photo-count{
+      position:absolute;
+      top:12px;
+      right:12px;
+      z-index:2;
+      padding:5px 10px;
+      border-radius:999px;
+      font-size:0.75rem;
+      font-weight:600;
+      background:rgba(0,0,0,0.65);
+      color:var(--cyan);
+      border:1px solid rgba(0,232,255,0.35);
+    }
+
     .product-card img{
       width:100%;
       height:250px;
       object-fit:cover;
+      display:block;
+    }
+
+    .image-dots{
+      position:absolute;
+      bottom:12px;
+      left:50%;
+      transform:translateX(-50%);
+      display:flex;
+      gap:8px;
+    }
+
+    .image-dot{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      border:1px solid rgba(255,255,255,0.5);
+      background:rgba(0,0,0,0.35);
+      cursor:pointer;
+      padding:0;
+    }
+
+    .image-dot.active{
+      background:var(--cyan);
+      border-color:var(--cyan);
+      box-shadow:0 0 10px rgba(0,232,255,0.6);
     }
 
     .product-info{
@@ -206,15 +325,57 @@
     }
 
     .product-info h3{
-      margin-bottom:10px;
+      margin-bottom:8px;
+      font-size:1.05rem;
+      transition:color 0.25s;
     }
 
-    .price{
+    .product-desc{
+      color:var(--text-muted);
+      font-size:0.95rem;
+      line-height:1.45;
+      margin-bottom:14px;
+      display:-webkit-box;
+      -webkit-line-clamp:1;
+      -webkit-box-orient:vertical;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .pricing{
+      margin-bottom:16px;
+    }
+
+    .price-line{
       color:var(--cyan);
-      font-size:22px;
-      margin-bottom:15px;
-      font-weight:bold;
-      text-shadow:0 0 12px rgba(0,232,255,0.3);
+      font-size:1rem;
+      font-weight:600;
+      margin-bottom:6px;
+      text-shadow:0 0 12px rgba(0,232,255,0.25);
+    }
+
+    .badge-soon{
+      display:inline-block;
+      padding:6px 12px;
+      border-radius:999px;
+      font-size:0.8rem;
+      letter-spacing:0.06em;
+      text-transform:uppercase;
+      color:var(--violet);
+      border:1px solid rgba(139,92,246,0.45);
+      background:rgba(139,92,246,0.12);
+    }
+
+    .badge-check{
+      display:inline-block;
+      padding:6px 12px;
+      border-radius:999px;
+      font-size:0.8rem;
+      letter-spacing:0.06em;
+      text-transform:uppercase;
+      color:var(--cyan);
+      border:1px solid rgba(0,232,255,0.45);
+      background:rgba(0,232,255,0.12);
     }
 
     .buy-btn{
@@ -236,6 +397,71 @@
       transform:translateY(-2px);
     }
 
+    .buy-btn-disabled{
+      opacity:0.55;
+      cursor:default;
+      pointer-events:none;
+    }
+
+    .card-actions{
+      padding:0 20px 20px;
+    }
+
+    .card-actions .buy-btn{
+      display:block;
+      width:100%;
+      text-align:center;
+    }
+
+    .order-section{
+      margin-top:56px;
+      padding:32px 24px;
+      text-align:center;
+      border-radius:20px;
+      background:rgba(255,255,255,0.04);
+      backdrop-filter:var(--glass-blur);
+      -webkit-backdrop-filter:var(--glass-blur);
+      border:1px solid var(--glass-border);
+    }
+
+    .order-section h3{
+      font-family:'Orbitron', sans-serif;
+      letter-spacing:0.1em;
+      margin-bottom:20px;
+    }
+
+    .order-links{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:14px;
+    }
+
+    .order-links a{
+      display:inline-block;
+      padding:12px 22px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:600;
+      letter-spacing:0.04em;
+      transition:0.25s;
+    }
+
+    .order-links .whatsapp{
+      background:linear-gradient(135deg, #25d366, #128c7e);
+      color:#fff;
+    }
+
+    .order-links .instagram{
+      background:linear-gradient(135deg, #f58529, #dd2a7b, #8134af);
+      color:#fff;
+    }
+
+    .order-links a:hover{
+      transform:translateY(-2px);
+      box-shadow:0 8px 24px rgba(0,0,0,0.35);
+    }
+
     footer{
       text-align:center;
       padding:24px;
@@ -248,69 +474,29 @@
       color:var(--text-muted);
     }
 
+    .footer-links{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:16px;
+      margin-bottom:14px;
+    }
+
+    .footer-links a{
+      color:var(--text-muted);
+      text-decoration:none;
+      font-size:0.9rem;
+      transition:color 0.25s;
+    }
+
+    .footer-links a:hover{
+      color:var(--cyan);
+    }
+
     @media (max-width: 768px){
       :root{
         --glass-blur:blur(16px) saturate(160%);
         --glow-cyan:0 0 20px rgba(0,232,255,0.25);
-      }
-
-      nav{
-        margin:8px 12px 0;
-        padding:12px 16px;
-        width:calc(100% - 24px);
-        flex-wrap:wrap;
-        gap:10px;
-      }
-
-      nav h1{
-        font-size:1rem;
-      }
-
-      .nav-links{
-        gap:10px;
-      }
-
-      nav a{
-        font-size:0.75rem;
-      }
-
-      .container{
-        padding:28px 12px;
-      }
-
-      .title{
-        padding:24px 16px;
-        margin-bottom:32px;
-      }
-
-      .title h2{
-        font-size:clamp(1.5rem, 6vw, 2rem);
-      }
-
-      .title p{
-        font-size:0.9rem;
-      }
-
-      .products{
-        grid-template-columns:1fr;
-        gap:20px;
-      }
-
-      .product-card img{
-        height:200px;
-      }
-
-      .product-card:hover{
-        transform:none;
-      }
-
-      .product-card:active{
-        transform:scale(0.98);
-      }
-
-      footer{
-        margin:32px 12px 16px;
-        padding:18px 16px;
       }
 
       .bg-orbs span:nth-child(1){
@@ -324,29 +510,8 @@
       }
     }
 
-    @media (max-width: 480px){
-      nav{
-        flex-direction:column;
-        align-items:stretch;
-      }
-
-      nav h1{
-        text-align:center;
-      }
-
-      .nav-links{
-        justify-content:center;
-        width:100%;
-        padding-top:8px;
-        border-top:1px solid rgba(255,255,255,0.06);
-      }
-
-      .title h2{
-        font-size:1.35rem;
-      }
-    }
-
   </style>
+  <link rel="stylesheet" href="css/site.css"/>
 </head>
 
 <body>
@@ -355,69 +520,53 @@
   <div class="bg-grid" aria-hidden="true"></div>
 
   <nav>
-    <h1>ST Galaxy</h1>
+    <a href="index.html" class="brand">
+      <div class="img-slot logo-slot">
+        <picture>
+          <source srcset="images/staticunchange/logo.webp" type="image/webp"/>
+          <img src="images/staticunchange/logo.jpeg" alt="ST Galaxy logo" loading="eager" onload="this.closest('.img-slot').classList.add('has-image')" onerror="this.style.display='none'"/>
+        </picture>
+        <span class="slot-hint">Logo</span>
+      </div>
+      <h1>ST Galaxy</h1>
+    </a>
 
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="products.html">Products</a>
+      <a href="about.html">About</a>
     </div>
   </nav>
 
   <section class="container">
 
     <div class="title">
-      <h2>Our Products</h2>
-      <p>Premium phone cases, chargers, earbuds and more.</p>
+      <h2 id="page-heading">Our Products</h2>
+      <p id="page-tagline">Airpods, Headphones, Chargers and more coming soon</p>
     </div>
 
-    <div class="products">
+    <div class="category-tabs" id="category-tabs" role="tablist" aria-label="Product categories"></div>
 
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1601593346740-925612772716?w=800&amp;q=80&amp;auto=format&amp;fit=crop" alt="Phone case" loading="lazy">
+    <h3 class="category-heading" id="category-heading">AIRPODS</h3>
 
-        <div class="product-info">
-          <h3>Premium Phone Case</h3>
-          <div class="price">₹299</div>
+    <div class="products is-loading" id="product-grid" aria-busy="true" aria-label="Loading products"></div>
 
-          <a href="https://wa.me/919089030805" class="buy-btn" target="_blank" rel="noopener noreferrer">
-            Buy Now
-          </a>
-        </div>
+    <div class="order-section">
+      <h3>TO ORDER</h3>
+      <div class="order-links">
+        <a href="#" class="whatsapp" id="contact-whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a href="#" class="instagram" id="contact-instagram" target="_blank" rel="noopener noreferrer">Instagram</a>
       </div>
-
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&amp;q=80&amp;fit=crop" alt="Wireless earbuds" loading="lazy">
-
-        <div class="product-info">
-          <h3>Wireless Earbuds</h3>
-          <div class="price">₹899</div>
-
-          <a href="https://wa.me/919089030805" class="buy-btn" target="_blank" rel="noopener noreferrer">
-            Buy Now
-          </a>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=800&amp;q=80&amp;fit=crop" alt="Fast charger" loading="lazy">
-
-        <div class="product-info">
-          <h3>Fast Charger &amp; Cable Set</h3>
-          <div class="price">₹499</div>
-
-          <a href="https://wa.me/919089030805" class="buy-btn" target="_blank" rel="noopener noreferrer">
-            Buy Now
-          </a>
-        </div>
-      </div>
-
     </div>
 
   </section>
 
-  <footer>
-    © 2026 ST Galaxy. All rights reserved.
-  </footer>
+  <footer id="site-footer"></footer>
 
+  <nav id="mobile-tabbar" class="mobile-tabbar" aria-label="Mobile navigation"></nav>
+
+  <script src="js/image-utils.js"></script>
+  <script src="js/site.js"></script>
+  <script src="js/products.js"></script>
 </body>
 </html>

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <title>Product - ST Galaxy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preload" href="data/products.json" as="fetch" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600&family=Orbitron:wght@500;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root{
+      --bg:#020203;
+      --glass-border:rgba(255,255,255,0.12);
+      --text:#eef0ff;
+      --text-muted:#7a7a9a;
+      --cyan:#00e8ff;
+      --violet:#8b5cf6;
+      --glass-blur:blur(22px) saturate(200%);
+      --glow-cyan:0 0 30px rgba(0,232,255,0.35);
+    }
+
+    *{ margin:0; padding:0; box-sizing:border-box; }
+
+    body{
+      font-family:'Exo 2', system-ui, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      min-height:100vh;
+      overflow-x:hidden;
+    }
+
+    .bg-orbs{
+      position:fixed;
+      inset:0;
+      z-index:0;
+      pointer-events:none;
+    }
+
+    .bg-orbs span{
+      position:absolute;
+      border-radius:50%;
+      filter:blur(80px);
+      animation:orb-float 16s ease-in-out infinite;
+    }
+
+    @keyframes orb-float{
+      0%, 100%{ transform:translate(0,0); }
+      50%{ transform:translate(20px,-30px); }
+    }
+
+    .bg-orbs span:nth-child(1){ width:400px; height:400px; background:rgba(0,232,255,0.16); top:-8%; left:-10%; }
+    .bg-orbs span:nth-child(2){ width:360px; height:360px; background:rgba(139,92,246,0.2); bottom:10%; right:-8%; animation-delay:-5s; }
+
+    .bg-grid{
+      position:fixed;
+      inset:0;
+      z-index:0;
+      pointer-events:none;
+      background-image:
+        linear-gradient(rgba(0,232,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,232,255,0.03) 1px, transparent 1px);
+      background-size:48px 48px;
+      mask-image:radial-gradient(ellipse 70% 50% at 50% 30%, black, transparent 70%);
+    }
+
+    body > *:not(.bg-orbs):not(.bg-grid):not(.mobile-tabbar):not(#mobile-tabbar){ position:relative; z-index:1; }
+
+    body > nav:first-of-type{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:16px 8%;
+      margin:12px 4% 0;
+      border-radius:16px;
+      background:rgba(255,255,255,0.03);
+      backdrop-filter:var(--glass-blur);
+      -webkit-backdrop-filter:var(--glass-blur);
+      border:1px solid var(--glass-border);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,0.1), 0 12px 40px rgba(0,0,0,0.5), var(--glow-cyan);
+    }
+
+    body > nav:first-of-type h1{
+      font-family:'Orbitron', sans-serif;
+      font-size:1.2rem;
+      background:linear-gradient(90deg, var(--cyan), var(--violet));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+
+    .nav-links{ display:flex; gap:16px; }
+
+    body > nav:first-of-type a{
+      color:var(--text-muted);
+      text-decoration:none;
+      text-transform:uppercase;
+      letter-spacing:0.08em;
+      font-size:0.9rem;
+      transition:color 0.25s;
+    }
+
+    body > nav:first-of-type a:hover{ color:var(--cyan); }
+
+    .container{
+      max-width:880px;
+      margin:0 auto;
+      padding:40px 20px 60px;
+    }
+
+    .detail-panel{
+      padding:28px 28px 36px;
+      border-radius:20px;
+      background:rgba(255,255,255,0.04);
+      backdrop-filter:var(--glass-blur);
+      -webkit-backdrop-filter:var(--glass-blur);
+      border:1px solid var(--glass-border);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,0.08), 0 12px 36px rgba(0,0,0,0.35);
+    }
+
+    .detail-top{
+      margin-bottom:20px;
+    }
+
+    .detail-header{
+      margin-bottom:28px;
+      padding-bottom:22px;
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+
+    .detail-category{
+      display:inline-block;
+      padding:6px 14px;
+      margin-bottom:14px;
+      border-radius:999px;
+      font-size:0.72rem;
+      font-weight:600;
+      letter-spacing:0.12em;
+      text-transform:uppercase;
+      color:var(--cyan);
+      background:rgba(0,232,255,0.08);
+      border:1px solid rgba(0,232,255,0.25);
+    }
+
+    .detail-header h1{
+      font-family:'Orbitron', sans-serif;
+      font-size:clamp(1.45rem, 4vw, 2.1rem);
+      line-height:1.25;
+      background:linear-gradient(90deg, var(--cyan), var(--violet));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+
+    .detail-section{
+      margin-bottom:28px;
+    }
+
+    .section-label{
+      font-family:'Orbitron', sans-serif;
+      font-size:0.75rem;
+      letter-spacing:0.14em;
+      text-transform:uppercase;
+      color:var(--text-muted);
+      margin-bottom:14px;
+    }
+
+    .gallery-main{
+      border-radius:16px;
+      overflow:hidden;
+      background:rgba(0,0,0,0.35);
+      border:1px solid var(--glass-border);
+      margin-bottom:14px;
+    }
+
+    .gallery-main img{
+      width:100%;
+      max-height:480px;
+      object-fit:contain;
+      display:block;
+      background:#0a0a10;
+    }
+
+    .gallery-thumbs{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .gallery-thumb{
+      width:76px;
+      height:76px;
+      padding:0;
+      border:2px solid var(--glass-border);
+      border-radius:12px;
+      overflow:hidden;
+      cursor:pointer;
+      background:#0a0a10;
+      transition:0.2s;
+    }
+
+    .gallery-thumb:hover{
+      border-color:rgba(0,232,255,0.35);
+    }
+
+    .gallery-thumb.active{
+      border-color:var(--cyan);
+      box-shadow:var(--glow-cyan);
+    }
+
+    .gallery-thumb img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .detail-desc{
+      color:var(--text);
+      padding:22px 24px;
+      font-size:1.02rem;
+      line-height:1.85;
+      white-space:pre-line;
+      border-radius:14px;
+      background:rgba(0,0,0,0.28);
+      border:1px solid var(--glass-border);
+    }
+
+    .detail-pricing{
+      padding:6px 0;
+      border-radius:14px;
+      background:rgba(0,0,0,0.22);
+      border:1px solid var(--glass-border);
+      overflow:hidden;
+    }
+
+    .price-row{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      padding:14px 20px;
+      border-bottom:1px solid rgba(255,255,255,0.06);
+    }
+
+    .price-row:last-child{ border-bottom:none; }
+
+    .price-label{
+      color:var(--text-muted);
+      font-size:0.95rem;
+    }
+
+    .price-value{
+      color:var(--cyan);
+      font-size:1.25rem;
+      font-weight:700;
+      text-shadow:0 0 12px rgba(0,232,255,0.25);
+    }
+
+    .badge-soon{
+      display:inline-block;
+      padding:10px 18px;
+      border-radius:999px;
+      color:var(--violet);
+      border:1px solid rgba(139,92,246,0.45);
+      background:rgba(139,92,246,0.12);
+      text-transform:uppercase;
+      letter-spacing:0.08em;
+      font-size:0.8rem;
+      font-weight:600;
+    }
+
+    .detail-order{
+      margin-bottom:0;
+      padding-top:8px;
+    }
+
+    .detail-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+
+    .buy-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:14px 28px;
+      background:linear-gradient(135deg, var(--cyan), var(--violet));
+      color:#030304;
+      text-decoration:none;
+      border-radius:10px;
+      font-family:'Orbitron', sans-serif;
+      font-size:0.78rem;
+      font-weight:700;
+      letter-spacing:0.06em;
+      transition:0.25s;
+    }
+
+    .buy-btn:hover{
+      box-shadow:0 0 24px rgba(0,232,255,0.35);
+      transform:translateY(-2px);
+    }
+
+    .buy-btn-disabled{
+      opacity:0.55;
+      pointer-events:none;
+    }
+
+    .instagram-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:14px 28px;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:600;
+      font-size:0.9rem;
+      color:#fff;
+      background:linear-gradient(135deg, #f58529, #dd2a7b, #8134af);
+      transition:0.25s;
+    }
+
+    .instagram-btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 8px 24px rgba(0,0,0,0.35);
+    }
+
+    .empty-state{
+      color:var(--text-muted);
+      margin-bottom:20px;
+      font-size:1rem;
+    }
+
+    footer{
+      text-align:center;
+      padding:24px;
+      margin:20px 4% 24px;
+      border-radius:16px;
+      background:rgba(255,255,255,0.03);
+      backdrop-filter:var(--glass-blur);
+      border:1px solid var(--glass-border);
+      color:var(--text-muted);
+    }
+
+    .footer-links{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:16px;
+      margin-bottom:12px;
+    }
+
+    .footer-links a{
+      color:var(--text-muted);
+      text-decoration:none;
+      font-size:0.9rem;
+    }
+
+    .footer-links a:hover{ color:var(--cyan); }
+
+    @media (max-width: 768px){
+      body > nav:first-of-type{ margin:8px 12px 0; padding:12px 16px; width:calc(100% - 24px); }
+      .container{ padding:24px 12px 40px; }
+      .detail-panel{ padding:20px 16px 28px; }
+      .gallery-main img{ max-height:300px; }
+      .detail-actions .buy-btn,
+      .detail-actions .instagram-btn{
+        width:100%;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="css/site.css"/>
+</head>
+<body>
+
+  <div class="bg-orbs" aria-hidden="true"><span></span><span></span></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <nav>
+    <a href="index.html" class="brand">
+      <div class="img-slot logo-slot">
+        <picture>
+          <source srcset="images/staticunchange/logo.webp" type="image/webp"/>
+          <img src="images/staticunchange/logo.jpeg" alt="ST Galaxy logo" loading="eager" onload="this.closest('.img-slot').classList.add('has-image')" onerror="this.style.display='none'"/>
+        </picture>
+        <span class="slot-hint">Logo</span>
+      </div>
+      <h1>ST Galaxy</h1>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="detail-panel" id="detail-root" aria-busy="true" aria-label="Loading product"></div>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <nav id="mobile-tabbar" class="mobile-tabbar" aria-label="Mobile navigation"></nav>
+
+  <script src="js/image-utils.js"></script>
+  <script src="js/site.js"></script>
+  <script src="js/product-detail.js"></script>
+</body>
+</html>

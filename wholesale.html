@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <title>Wholesale Rates — ST Galaxy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600&family=Orbitron:wght@500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/site.css"/>
+  <style>
+    :root{
+      --bg:#020203;
+      --glass-border:rgba(255,255,255,0.12);
+      --text:#eef0ff;
+      --text-muted:#7a7a9a;
+      --cyan:#00e8ff;
+      --violet:#8b5cf6;
+      --glass-blur:blur(22px) saturate(200%);
+      --glow-cyan:0 0 30px rgba(0,232,255,0.35);
+    }
+    *{ margin:0; padding:0; box-sizing:border-box; }
+    body{ font-family:'Exo 2', system-ui, sans-serif; background:var(--bg); color:var(--text); min-height:100vh; }
+    .bg-orbs{ position:fixed; inset:0; z-index:0; pointer-events:none; }
+    .bg-orbs span{ position:absolute; border-radius:50%; filter:blur(80px); }
+    .bg-orbs span:nth-child(1){ width:400px; height:400px; background:rgba(0,232,255,0.16); top:-8%; left:-10%; }
+    .bg-orbs span:nth-child(2){ width:400px; height:400px; background:rgba(139,92,246,0.2); bottom:10%; right:-8%; }
+    .bg-grid{
+      position:fixed; inset:0; z-index:0; pointer-events:none;
+      background-image:
+        linear-gradient(rgba(0,232,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,232,255,0.03) 1px, transparent 1px);
+      background-size:48px 48px;
+    }
+    body > *:not(.bg-orbs):not(.bg-grid):not(.mobile-tabbar):not(#mobile-tabbar):not(.legal-notice){ position:relative; z-index:1; }
+    body > nav:first-of-type{
+      display:flex; justify-content:space-between; align-items:center;
+      padding:16px 8%; margin:12px 4% 0; border-radius:16px;
+      background:rgba(255,255,255,0.03); backdrop-filter:var(--glass-blur);
+      border:1px solid var(--glass-border); box-shadow:var(--glow-cyan);
+    }
+    body > nav:first-of-type h1{
+      font-family:'Orbitron', sans-serif; font-size:1.2rem;
+      background:linear-gradient(90deg, var(--cyan), var(--violet));
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+    }
+    .nav-links{ display:flex; gap:16px; }
+    body > nav:first-of-type a{ color:var(--text-muted); text-decoration:none; text-transform:uppercase; letter-spacing:0.08em; font-size:0.9rem; }
+    body > nav:first-of-type a:hover{ color:var(--cyan); }
+  </style>
+</head>
+<body>
+
+  <div class="bg-orbs" aria-hidden="true"><span></span><span></span></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <nav>
+    <a href="index.html" class="brand">
+      <div class="img-slot logo-slot">
+        <picture>
+          <source srcset="images/staticunchange/logo.webp" type="image/webp"/>
+          <img src="images/staticunchange/logo.jpeg" alt="ST Galaxy logo" loading="eager" onload="this.closest('.img-slot').classList.add('has-image')" onerror="this.style.display='none'"/>
+        </picture>
+        <span class="slot-hint">Logo</span>
+      </div>
+      <h1>ST Galaxy</h1>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+    </div>
+  </nav>
+
+  <main class="pdf-page">
+    <div class="pdf-panel wholesale-panel">
+      <h1 class="pdf-title">Wholesale Rates</h1>
+      <p class="pdf-intro">View our full wholesale price chart. Tap the button below — it opens clearly on your phone.</p>
+
+      <a href="images/pdf/wholesale-chart.pdf" class="wholesale-preview-link" target="_blank" rel="noopener noreferrer">
+        <picture>
+          <source srcset="images/staticunchange/wholesale.webp" type="image/webp"/>
+          <img src="images/staticunchange/wholesale.png" alt="Wholesale bulk phone accessories" loading="lazy"/>
+        </picture>
+        <span class="wholesale-preview-label">Tap to open price chart</span>
+      </a>
+
+      <div class="pdf-actions">
+        <a href="images/pdf/wholesale-chart.pdf" class="pdf-btn pdf-btn-primary pdf-btn-lg" target="_blank" rel="noopener noreferrer">View wholesale chart</a>
+        <a href="images/pdf/wholesale-chart.pdf" class="pdf-btn pdf-btn-outline" download>Download PDF</a>
+        <a href="https://wa.me/919089030805" class="pdf-btn pdf-btn-wa" target="_blank" rel="noopener noreferrer">Order on WhatsApp</a>
+      </div>
+
+      <div class="pdf-embed-desktop">
+        <iframe
+          src="images/pdf/wholesale-chart.pdf"
+          title="ST Galaxy wholesale price chart"
+          class="pdf-frame"
+        ></iframe>
+      </div>
+
+      <a href="index.html" class="legal-back">← Back to home</a>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <nav id="mobile-tabbar" class="mobile-tabbar" aria-label="Mobile navigation"></nav>
+  <script src="js/site.js"></script>
+</body>
+</html>

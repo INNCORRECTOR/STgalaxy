@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <title>About - ST Galaxy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600&family=Orbitron:wght@500;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root{
+      --bg:#020203;
+      --glass-border:rgba(255,255,255,0.12);
+      --text:#eef0ff;
+      --text-muted:#7a7a9a;
+      --cyan:#00e8ff;
+      --violet:#8b5cf6;
+      --glass-blur:blur(22px) saturate(200%);
+      --glow-cyan:0 0 30px rgba(0,232,255,0.35);
+      --neon-green:#00ff9c;
+    }
+
+    *{ margin:0; padding:0; box-sizing:border-box; }
+
+    body{
+      font-family:'Exo 2', system-ui, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      min-height:100vh;
+    }
+
+    .bg-orbs{
+      position:fixed;
+      inset:0;
+      z-index:0;
+      pointer-events:none;
+    }
+
+    .bg-orbs span{
+      position:absolute;
+      border-radius:50%;
+      filter:blur(80px);
+    }
+
+    .bg-orbs span:nth-child(1){ width:400px; height:400px; background:rgba(0,232,255,0.16); top:-8%; left:-10%; }
+    .bg-orbs span:nth-child(2){ width:360px; height:360px; background:rgba(139,92,246,0.2); bottom:10%; right:-8%; }
+
+    .bg-grid{
+      position:fixed;
+      inset:0;
+      z-index:0;
+      pointer-events:none;
+      background-image:
+        linear-gradient(rgba(0,232,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,232,255,0.03) 1px, transparent 1px);
+      background-size:48px 48px;
+    }
+
+    body > *:not(.bg-orbs):not(.bg-grid):not(.mobile-tabbar):not(#mobile-tabbar){ position:relative; z-index:1; }
+
+    body > nav:first-of-type{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:16px 8%;
+      margin:12px 4% 0;
+      border-radius:16px;
+      background:rgba(255,255,255,0.03);
+      backdrop-filter:var(--glass-blur);
+      border:1px solid var(--glass-border);
+      box-shadow:var(--glow-cyan);
+    }
+
+    body > nav:first-of-type h1{
+      font-family:'Orbitron', sans-serif;
+      font-size:1.2rem;
+      background:linear-gradient(90deg, var(--cyan), var(--violet));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+
+    .nav-links{ display:flex; gap:16px; }
+
+    body > nav:first-of-type a{
+      color:var(--text-muted);
+      text-decoration:none;
+      text-transform:uppercase;
+      letter-spacing:0.08em;
+      font-size:0.9rem;
+    }
+
+    body > nav:first-of-type a:hover{ color:var(--cyan); }
+
+    .container{
+      max-width:720px;
+      margin:0 auto;
+      padding:36px 20px 40px;
+    }
+
+    .about-panel{
+      padding:32px 28px;
+      border-radius:20px;
+      background:rgba(255,255,255,0.04);
+      backdrop-filter:var(--glass-blur);
+      border:1px solid var(--glass-border);
+    }
+
+    .about-panel h2{
+      font-family:'Orbitron', sans-serif;
+      font-size:clamp(1.4rem, 4vw, 1.85rem);
+      margin-bottom:8px;
+      background:linear-gradient(90deg, var(--cyan), var(--violet));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+
+    .about-location{
+      color:var(--cyan);
+      font-size:1rem;
+      margin-bottom:24px;
+    }
+
+    .about-section{
+      margin-bottom:28px;
+      padding-bottom:24px;
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+
+    .about-section:last-of-type{
+      border-bottom:none;
+      margin-bottom:0;
+      padding-bottom:0;
+    }
+
+    .about-section h3{
+      font-family:'Orbitron', sans-serif;
+      font-size:0.8rem;
+      letter-spacing:0.12em;
+      text-transform:uppercase;
+      color:var(--text-muted);
+      margin-bottom:12px;
+    }
+
+    .about-section p,
+    .about-section li{
+      font-size:1rem;
+      line-height:1.75;
+      color:#c8c8de;
+    }
+
+    .about-section ul{
+      list-style:none;
+    }
+
+    .about-section li{
+      padding:6px 0;
+    }
+
+    .about-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:12px;
+    }
+
+    .about-tag{
+      padding:8px 14px;
+      border-radius:999px;
+      font-size:0.85rem;
+      background:rgba(139,92,246,0.12);
+      border:1px solid rgba(139,92,246,0.35);
+      color:#c4b5fd;
+    }
+
+    .about-email{
+      display:inline-block;
+      margin-top:8px;
+      color:var(--neon-green);
+      font-size:1.1rem;
+      font-weight:600;
+      text-decoration:none;
+    }
+
+    .about-email:hover{ text-decoration:underline; }
+
+    .about-cta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:28px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:14px 22px;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:600;
+      font-size:0.9rem;
+    }
+
+    .btn-wa{
+      background:linear-gradient(135deg, #25d366, #128c7e);
+      color:#fff;
+    }
+
+    .btn-shop{
+      background:linear-gradient(135deg, var(--cyan), var(--violet));
+      color:#030304;
+      font-family:'Orbitron', sans-serif;
+      font-size:0.78rem;
+      letter-spacing:0.06em;
+    }
+  </style>
+  <link rel="stylesheet" href="css/site.css"/>
+</head>
+<body>
+
+  <div class="bg-orbs" aria-hidden="true"><span></span><span></span></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <nav>
+    <a href="index.html" class="brand">
+      <div class="img-slot logo-slot">
+        <picture>
+          <source srcset="images/staticunchange/logo.webp" type="image/webp"/>
+          <img src="images/staticunchange/logo.jpeg" alt="ST Galaxy logo" loading="eager" onload="this.closest('.img-slot').classList.add('has-image')" onerror="this.style.display='none'"/>
+        </picture>
+        <span class="slot-hint">Logo</span>
+      </div>
+      <h1>ST Galaxy</h1>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <article class="about-panel">
+      <h2>About ST Galaxy</h2>
+      <p class="about-location">Nagaland · Retail &amp; Wholesale phone accessories</p>
+
+      <section class="about-section">
+        <h3>Who we are</h3> 
+        <p>
+          We have the most affordable phone accessories and electronics — at both
+          <strong>retail</strong> and <strong>wholesale</strong> prices.
+        </p>
+      </section>
+
+      <section class="about-section">
+        <h3>What we sell</h3>
+        <p>Airpods, earphones, chargers, cables — and much more.</p>
+        <!-- <div class="about-tags">
+          <span class="about-tag">Airpods</span>
+          <span class="about-tag">Earphones</span>
+          <span class="about-tag">Chargers</span>
+          <span class="about-tag">Cables</span>
+          <span class="about-tag">Headphones</span>
+          <span class="about-tag">Wholesale</span>
+        </div> -->
+        <p style="margin-top:14px">You name it — we have everything in wholesale.</p>
+      </section>
+<!-- 
+      <section class="about-section">
+        <h3>Business hours</h3>
+        <ul>
+          <li>Saturday — <span class="hours-closed">Closed</span></li>
+          <li>Sunday — <span class="hours-closed">Closed</span></li>
+          <li>Monday — <span class="hours-open">Open 24 hours</span></li>
+          <li>Tuesday — <span class="hours-open">Open 24 hours</span></li>
+          <li>Wednesday — <span class="hours-open">Open 24 hours</span></li>
+          <li>Thursday — <span class="hours-open">Open 24 hours</span></li>
+          <li>Friday — <span class="hours-open">Open 24 hours</span></li>
+        </ul>
+      </section> -->
+
+      <section class="about-section">
+        <h3>Contact</h3>
+        <p>Email us anytime:</p>
+        <a class="about-email" href="mailto:sosokachui@gmail.com">sosokachui@gmail.com</a>
+      </section>
+
+      <div class="about-cta">
+        <a href="products.html" class="btn btn-shop">Browse Products</a>
+        <a href="https://wa.me/919089030805" class="btn btn-wa" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      </div>
+    </article>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <nav id="mobile-tabbar" class="mobile-tabbar" aria-label="Mobile navigation"></nav>
+  <script src="js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <title>Privacy Policy — ST Galaxy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600&family=Orbitron:wght@500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/site.css"/>
+  <style>
+    :root{
+      --bg:#020203;
+      --glass-border:rgba(255,255,255,0.12);
+      --text:#eef0ff;
+      --text-muted:#7a7a9a;
+      --cyan:#00e8ff;
+      --violet:#8b5cf6;
+      --glass-blur:blur(22px) saturate(200%);
+      --glow-cyan:0 0 30px rgba(0,232,255,0.35);
+    }
+    *{ margin:0; padding:0; box-sizing:border-box; }
+    body{ font-family:'Exo 2', system-ui, sans-serif; background:var(--bg); color:var(--text); min-height:100vh; }
+    .bg-orbs{ position:fixed; inset:0; z-index:0; pointer-events:none; }
+    .bg-orbs span{ position:absolute; border-radius:50%; filter:blur(80px); }
+    .bg-orbs span:nth-child(1){ width:400px; height:400px; background:rgba(0,232,255,0.16); top:-8%; left:-10%; }
+    .bg-orbs span:nth-child(2){ width:360px; height:360px; background:rgba(139,92,246,0.2); bottom:10%; right:-8%; }
+    .bg-grid{
+      position:fixed; inset:0; z-index:0; pointer-events:none;
+      background-image:
+        linear-gradient(rgba(0,232,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,232,255,0.03) 1px, transparent 1px);
+      background-size:48px 48px;
+    }
+    body > *:not(.bg-orbs):not(.bg-grid):not(.mobile-tabbar):not(#mobile-tabbar):not(.legal-notice){ position:relative; z-index:1; }
+    body > nav:first-of-type{
+      display:flex; justify-content:space-between; align-items:center;
+      padding:16px 8%; margin:12px 4% 0; border-radius:16px;
+      background:rgba(255,255,255,0.03); backdrop-filter:var(--glass-blur);
+      border:1px solid var(--glass-border); box-shadow:var(--glow-cyan);
+    }
+    body > nav:first-of-type h1{
+      font-family:'Orbitron', sans-serif; font-size:1.2rem;
+      background:linear-gradient(90deg, var(--cyan), var(--violet));
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+    }
+    .nav-links{ display:flex; gap:16px; }
+    body > nav:first-of-type a{ color:var(--text-muted); text-decoration:none; text-transform:uppercase; letter-spacing:0.08em; font-size:0.9rem; }
+    body > nav:first-of-type a:hover{ color:var(--cyan); }
+    .container{ max-width:720px; margin:0 auto; padding:36px 20px 40px; }
+    .about-panel{
+      padding:32px 28px; border-radius:20px;
+      background:rgba(255,255,255,0.04); backdrop-filter:var(--glass-blur);
+      border:1px solid var(--glass-border);
+    }
+    .about-panel h2{
+      font-family:'Orbitron', sans-serif; font-size:clamp(1.4rem, 4vw, 1.85rem); margin-bottom:8px;
+      background:linear-gradient(90deg, var(--cyan), var(--violet));
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+    }
+    .about-section{ margin-bottom:28px; padding-bottom:24px; border-bottom:1px solid rgba(255,255,255,0.08); }
+    .about-section:last-of-type{ border-bottom:none; margin-bottom:0; padding-bottom:0; }
+    .about-section h3{
+      font-family:'Orbitron', sans-serif; font-size:0.8rem; letter-spacing:0.12em;
+      text-transform:uppercase; color:var(--text-muted); margin-bottom:12px;
+    }
+    .about-section p, .about-section li{ font-size:1rem; line-height:1.75; color:#c8c8de; }
+    .about-section ul{ list-style:none; }
+    .about-section li{ padding:4px 0; }
+  </style>
+</head>
+<body>
+
+  <div class="bg-orbs" aria-hidden="true"><span></span><span></span></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <nav>
+    <a href="index.html" class="brand">
+      <div class="img-slot logo-slot">
+        <picture>
+          <source srcset="images/staticunchange/logo.webp" type="image/webp"/>
+          <img src="images/staticunchange/logo.jpeg" alt="ST Galaxy logo" loading="eager" onload="this.closest('.img-slot').classList.add('has-image')" onerror="this.style.display='none'"/>
+        </picture>
+        <span class="slot-hint">Logo</span>
+      </div>
+      <h1>ST Galaxy</h1>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <article class="about-panel">
+      <h2>Privacy Policy</h2>
+      <p class="legal-intro">
+        We are a locally-owned phone accessories retailer operating from Nagaland, India.
+        We are not affiliated with any large technology company.
+        This page explains, in plain language, what happens when you use our website or message us.
+      </p>
+      <p class="legal-updated">Last updated: June 2026</p>
+
+      <section class="about-section legal-section">
+        <h3>What we collect</h3>
+        <p>
+          This website does not ask you to create an account or fill out order forms.
+          If you contact us on WhatsApp, Instagram, or email, you choose what to share —
+          usually your name, phone number, and delivery details so we can help with your order.
+        </p>
+        <p style="margin-top:12px">
+          If you buy any products from us, you get access to our Customers-Only group where we use that
+          for updates on offers and giveaways only for our customers.
+        </p>
+      </section>
+
+      <section class="about-section legal-section">
+        <h3>What we don't do</h3>
+        <ul>
+          <li>We don't sell your personal information.</li>
+          <li>We don't run ad trackers or analytics on this site.</li>
+          <li>We don't send marketing spam without your consent.</li>
+        </ul>
+      </section>
+
+      <section class="about-section legal-section">
+        <h3>Website &amp; third-party links</h3>
+        <p>
+          Our pages may load fonts from Google Fonts to look nice in your browser.
+          When you tap WhatsApp or Instagram, you leave our site and their privacy rules apply.
+          Product photos may come from our own uploads or stock images shown for reference.
+        </p>
+      </section>
+
+      <section class="about-section legal-section">
+        <h3>How long we keep information</h3>
+        <p>
+          We keep order-related messages only as long as we need them for business records,
+          support, or warranty — then we delete them when it is reasonable to do so.
+        </p>
+      </section>
+
+      <section class="about-section legal-section">
+        <h3>Your choices</h3>
+        <p>
+          You can ask us what information we have about you, or request that we update or delete it.
+          Just message or email us — we're happy to help.
+        </p>
+      </section>
+
+      <section class="about-section legal-section">
+        <h3>Contact</h3>
+        <p>
+          Questions about privacy?<br/>
+          Email: <a href="mailto:sosokachui@gmail.com">sosokachui@gmail.com</a><br/>
+          WhatsApp: <a href="https://wa.me/919089030805" target="_blank" rel="noopener noreferrer">+91 90890 30805</a>
+        </p>
+      </section>
+
+      <section class="about-section legal-section">
+        <h3>Changes</h3>
+        <p>
+          We may update this page from time to time. If anything important changes,
+          we'll do our best to reflect it here with a new date.
+        </p>
+        <p style="margin-top:12px">
+          See also our <a href="terms.html">Terms &amp; Conditions</a>.
+        </p>
+      </section>
+
+      <a href="index.html" class="legal-back">← Back to home</a>
+    </article>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <nav id="mobile-tabbar" class="mobile-tabbar" aria-label="Mobile navigation"></nav>
+  <script src="js/site.js"></script>
+</body>
+</html>

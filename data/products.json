@@ -1,0 +1,542 @@
+{
+  "categories": [
+    {
+      "id": "airpods",
+      "label": "Airpods"
+    },
+    {
+      "id": "earphones",
+      "label": "Earphones"
+    },
+    {
+      "id": "headphones",
+      "label": "Headphones"
+    },
+    {
+      "id": "chargers",
+      "label": "Chargers"
+    },
+    {
+      "id": "others",
+      "label": "Others"
+    }
+  ],
+  "contact": {
+    "instagram": "https://www.instagram.com/st.galaxyz?igsh=MWZjZjJ0NnpvMjJndw==",
+    "whatsapp": "https://wa.me/919089030805"
+  },
+  "meta": {
+    "heading": "Our Products",
+    "pageTitle": "Airpods - Earphones - Headphones - Chargers - Others",
+    "tagline": "Airpods, Headphones, Chargers and more coming soon"
+  },
+  "products": [
+    {
+      "available": true,
+      "category": "airpods",
+      "description": "Lightning Type",
+      "id": "airpods-white-pro-1-lightning",
+      "images": [
+        "images/airpods/airpods-white-pro-1-lightning-1.jpg",
+        "images/airpods/airpods-white-pro-1-lightning-2.jpg",
+        "images/airpods/airpods-white-pro-1-lightning-3.jpg"
+      ],
+      "name": "White Airpods Pro (1ST GEN)",
+      "pricing": [
+        {
+          "label": "30 Days Warranty",
+          "price": 999
+        },
+        {
+          "label": "90 Days Warranty",
+          "price": 1199
+        }
+      ]
+    },
+    {
+      "available": true,
+      "category": "airpods",
+      "description": "Lightning Type",
+      "id": "airpods-white-pro-2-lightning",
+      "images": [
+        "images/airpods/airpods-white-pro-2-lightning-1.jpg",
+        "images/airpods/airpods-white-pro-2-lightning-2.jpg",
+        "images/airpods/airpods-white-pro-2-lightning-3.jpg"
+      ],
+      "name": "White Airpods Pro (2ND GEN)",
+      "pricing": [
+        {
+          "label": "30 Days Warranty",
+          "price": 1199
+        },
+        {
+          "label": "90 Days Warranty",
+          "price": 1399
+        }
+      ]
+    },
+    {
+      "available": true,
+      "category": "airpods",
+      "description": "Lightning Type",
+      "id": "airpods-black-pro-1-lightning",
+      "images": [
+        "images/airpods/airpods-black-pro-1-lightning-1.jpg",
+        "images/airpods/airpods-black-pro-1-lightning-2.jpg",
+        "images/airpods/airpods-black-pro-1-lightning-3.jpg"
+      ],
+      "name": "Black Airpods Pro (1ST GEN)",
+      "pricing": [
+        {
+          "label": "30 Days Warranty",
+          "price": 999
+        },
+        {
+          "label": "90 Days Warranty",
+          "price": 1199
+        }
+      ]
+    },
+    {
+      "available": true,
+      "category": "airpods",
+      "description": "Lightning Type",
+      "id": "airpods-black-pro-2-lightning",
+      "images": [
+        "images/airpods/airpods-black-pro-2-lightning-1.jpg",
+        "images/airpods/airpods-black-pro-2-lightning-2.jpg",
+        "images/airpods/airpods-black-pro-2-lightning-3.jpg"
+      ],
+      "name": "Black Airpods Pro (2ND GEN)",
+      "pricing": [
+        {
+          "label": "30 Days Warranty",
+          "price": 1199
+        },
+        {
+          "label": "90 Days Warranty",
+          "price": 1399
+        }
+      ]
+    },
+    {
+      "available": true,
+      "category": "airpods",
+      "description": "C-Type Charging",
+      "id": "airpods-white-pro-1-ctype",
+      "images": [
+        "images/airpods/airpods-white-pro-1-ctype-1.jpg",
+        "images/airpods/airpods-white-pro-1-ctype-2.jpg"
+      ],
+      "name": "White Airpods Pro (1ST GEN)",
+      "pricing": [
+        {
+          "label": "30 Days Warranty",
+          "price": 899
+        },
+        {
+          "label": "90 Days Warranty",
+          "price": 999
+        }
+      ]
+    },
+    {
+      "available": true,
+      "category": "airpods",
+      "description": "C-Type Charging",
+      "id": "airpods-white-pro-2-ctype",
+      "images": [
+        "images/airpods/airpods-white-pro-2-ctype-1.jpg",
+        "images/airpods/airpods-white-pro-2-ctype-2.jpg",
+        "images/airpods/airpods-white-pro-2-ctype-3.jpg"
+      ],
+      "name": "White Airpods Pro (2ND GEN)",
+      "pricing": [
+        {
+          "label": "30 Days Warranty",
+          "price": 999
+        },
+        {
+          "label": "90 Days Warranty",
+          "price": 1199
+        }
+      ]
+    },
+    {
+      "available": true,
+      "category": "airpods",
+      "description": "C-Type Charging",
+      "id": "airpods-black-pro-1-ctype",
+      "images": [
+        "images/airpods/airpods-black-pro-1-ctype-1.jpg",
+        "images/airpods/airpods-black-pro-1-ctype-2.jpg"
+      ],
+      "name": "Black Airpods Pro (1ST GEN)",
+      "pricing": [
+        {
+          "label": "30 Days Warranty",
+          "price": 899
+        },
+        {
+          "label": "90 Days Warranty",
+          "price": 999
+        }
+      ]
+    },
+    {
+      "available": true,
+      "category": "airpods",
+      "description": "C-Type Charging",
+      "id": "airpods-black-pro-2-ctype",
+      "images": [
+        "images/airpods/airpods-black-pro-2-ctype-1.jpg",
+        "images/airpods/airpods-black-pro-2-ctype-2.jpg",
+        "images/airpods/airpods-black-pro-2-ctype-3.jpg"
+      ],
+      "name": "Black Airpods Pro (2ND GEN)",
+      "pricing": [
+        {
+          "label": "30 Days Warranty",
+          "price": 999
+        },
+        {
+          "label": "90 Days Warranty",
+          "price": 1199
+        }
+      ]
+    },
+    {
+      "available": false,
+      "category": "airpods",
+      "description": "",
+      "id": "airpods-2",
+      "images": [
+        "images/airpods/airpods-2-1.jpg"
+      ],
+      "name": "Airpods 2",
+      "pricing": []
+    },
+    {
+      "available": false,
+      "category": "airpods",
+      "description": "",
+      "id": "airpods-3",
+      "images": [
+        "images/airpods/airpods-3-1.jpg"
+      ],
+      "name": "Airpods 3",
+      "pricing": []
+    },
+    {
+      "available": true,
+      "category": "earphones",
+      "description": "ALL SOLD OUT\n(Restocking Soon)",
+      "id": "earphones-samsung-buds2-pro",
+      "images": [
+        "images/earphones/earphones-samsung-buds2-pro-1.jpg",
+        "images/earphones/earphones-samsung-buds2-pro-2.jpg",
+        "images/earphones/earphones-samsung-buds2-pro-3.jpg"
+      ],
+      "name": "Samsung Buds2 Pro",
+      "pricing": [
+        {
+          "label": "30 Days Warranty",
+          "price": 999
+        },
+        {
+          "label": "90 Days Warranty",
+          "price": 1199
+        }
+      ]
+    },
+    {
+      "available": true,
+      "category": "earphones",
+      "description": "ALL SOLD OUT\n(Restocking Soon)",
+      "id": "earphones-nothing-cmf-buds",
+      "images": [
+        "images/earphones/earphones-nothing-cmf-buds-1.jpg",
+        "images/earphones/earphones-nothing-cmf-buds-2.jpg",
+        "images/earphones/earphones-nothing-cmf-buds-2.jpg",
+        "images/earphones/earphones-nothing-cmf-buds-3.jpg"
+      ],
+      "name": "NOTHING CMF Buds",
+      "pricing": [
+        {
+          "label": "30 Days Warranty",
+          "price": 699
+        },
+        {
+          "label": "90 Days Warranty",
+          "price": 899
+        }
+      ]
+    },
+    {
+      "available": true,
+      "category": "earphones",
+      "description": "ALL SOLD OUT\n(Restocking Soon)",
+      "id": "earphones-oneplus-nord3-pro",
+      "images": [
+        "images/earphones/earphones-oneplus-nord3-pro-1.jpg",
+        "images/earphones/earphones-oneplus-nord3-pro-2.jpg",
+        "images/earphones/earphones-oneplus-nord3-pro-3.jpg"
+      ],
+      "name": "OnePlus Nord3 Pro",
+      "pricing": [
+        {
+          "label": "30 Days Warranty",
+          "price": 799
+        },
+        {
+          "label": "90 Days Warranty",
+          "price": 999
+        }
+      ]
+    },
+    {
+      "available": true,
+      "category": "earphones",
+      "description": "ALL SOLD OUT\n(Restocking Soon)",
+      "id": "earphones-ultrapods",
+      "images": [
+        "images/earphones/earphones-ultrapods-1.jpg",
+        "images/earphones/earphones-ultrapods-2.jpg",
+        "images/earphones/earphones-ultrapods-3.jpg",
+        "images/earphones/earphones-ultrapods-4.jpg",
+        "images/earphones/earphones-ultrapods-5.jpg"
+      ],
+      "name": "ULTRAPODS",
+      "pricing": [
+        {
+          "label": "30 Days Warranty",
+          "price": 499
+        },
+        {
+          "label": "90 Days Warranty",
+          "price": 799
+        }
+      ]
+    },
+    {
+      "available": false,
+      "category": "earphones",
+      "description": "",
+      "id": "earphones-neckbands",
+      "images": [
+        "images/earphones/earphones-neckbands-1.jpg",
+        "images/earphones/earphones-neckbands-2.jpg",
+        "images/earphones/earphones-neckbands-3.jpg",
+        "images/earphones/earphones-neckbands-4.jpg"
+      ],
+      "name": "Neckbands",
+      "pricing": []
+    },
+    {
+      "available": true,
+      "category": "headphones",
+      "description": "Great Quality Bass & And Adjustable",
+      "id": "headphones-p9",
+      "images": [
+        "images/headphones/headphones-p9-1.jpg"
+      ],
+      "name": "P9 Headphones (Coming Soon)",
+      "pricing": [
+        {
+          "label": "30 Days Warranty",
+          "price": 799
+        },
+        {
+          "label": "90 Days Warranty",
+          "price": 1199
+        }
+      ]
+    },
+    {
+      "available": false,
+      "category": "headphones",
+      "description": "",
+      "id": "headphones-airpods-max",
+      "images": [
+        "images/headphones/headphones-airpods-max-1.jpg"
+      ],
+      "name": "Airpods Max",
+      "pricing": []
+    },
+    {
+      "available": true,
+      "category": "chargers",
+      "description": "ALL SOLD OUT\n(Restocking Soon)",
+      "id": "chargers-usb-l-cable",
+      "images": [
+        "images/chargers/chargers-usb-l-cable-1.jpg"
+      ],
+      "name": "USB-L Cable",
+      "pricing": [
+        {
+          "label": "",
+          "price": 299
+        }
+      ]
+    },
+    {
+      "available": true,
+      "category": "chargers",
+      "description": "ALL SOLD OUT\n(Restocking Soon)",
+      "id": "chargers-c-l-cable",
+      "images": [
+        "images/chargers/chargers-c-l-cable-1.jpg"
+      ],
+      "name": "C-L Cable",
+      "pricing": [
+        {
+          "label": "",
+          "price": 299
+        }
+      ]
+    },
+    {
+      "available": true,
+      "category": "chargers",
+      "description": "ALL SOLD OUT\n(Restocking Soon)",
+      "id": "chargers-c-c-cable",
+      "images": [
+        "images/chargers/chargers-c-c-cable-1.jpg"
+      ],
+      "name": "C-C Cable",
+      "pricing": [
+        {
+          "label": "",
+          "price": 349
+        }
+      ]
+    },
+    {
+      "available": true,
+      "category": "chargers",
+      "description": "ALL SOLD OUT\n(Restocking Soon)",
+      "id": "chargers-c-20w-adapter",
+      "images": [
+        "images/chargers/chargers-c-20w-adapter-1.jpg",
+        "images/chargers/chargers-c-20w-adapter-2.jpg"
+      ],
+      "name": "20W Adapter (Type C)",
+      "pricing": [
+        {
+          "label": "",
+          "price": 499
+        }
+      ]
+    },
+    {
+      "available": true,
+      "category": "chargers",
+      "description": "ALL SOLD OUT\n(Restocking Soon)",
+      "id": "chargers-c-35w-adapter",
+      "images": [
+        "images/chargers/chargers-c-35w-adapter-1.jpg"
+      ],
+      "name": "35W Power Adapter (Type C)",
+      "pricing": [
+        {
+          "label": "",
+          "price": 699
+        }
+      ]
+    },
+    {
+      "available": true,
+      "category": "others",
+      "description": "",
+      "id": "others-iphone-adapter-cover",
+      "images": [
+        "images/others/others-iphone-adapter-cover-1.jpg",
+        "images/others/others-iphone-adapter-cover-2.jpg",
+        "images/others/others-iphone-adapter-cover-3.jpg"
+      ],
+      "name": "IPHONE Adapter Cover",
+      "pricing": [
+        {
+          "label": "",
+          "price": 199
+        }
+      ]
+    },
+    {
+      "available": true,
+      "category": "others",
+      "description": "ALL SOLD OUT\n(Restocking Soon)",
+      "id": "others-finger-sleeves",
+      "images": [
+        "images/others/others-finger-sleeves-1.jpg"
+      ],
+      "name": "Finger Sleeves",
+      "pricing": [
+        {
+          "label": "",
+          "price": 39
+        }
+      ]
+    },
+    {
+      "available": true,
+      "category": "others",
+      "description": "Single Ports & Multiple Ports\nALL SOLD OUT\n(Restocking Soon)",
+      "id": "others-mi-powerbanks",
+      "images": [
+        "images/others/others-mi-powerbanks-1.jpg",
+        "images/others/others-mi-powerbanks-2.jpg",
+        "images/others/others-mi-powerbanks-3.jpg"
+      ],
+      "name": "Mi Powerbanks",
+      "pricing": [
+        {
+          "label": "Single Ports — 10K MAH",
+          "price": 999
+        },
+        {
+          "label": "Single Ports — 20K MAH",
+          "price": 1199
+        },
+        {
+          "label": "Single Ports — 30K MAH",
+          "price": 1399
+        },
+        {
+          "label": "Multiple Ports — 10K MAH",
+          "price": 1199
+        },
+        {
+          "label": "Multiple Ports — 20K MAH",
+          "price": 1399
+        },
+        {
+          "label": "Multiple Ports — 30K MAH",
+          "price": 1699
+        }
+      ]
+    },
+    {
+      "available": false,
+      "category": "others",
+      "description": "",
+      "id": "others-mini-printer",
+      "images": [
+        "images/others/others-mini-printer-1.jpg"
+      ],
+      "name": "Mini Printer",
+      "pricing": []
+    },
+    {
+      "available": false,
+      "category": "chargers",
+      "description": "",
+      "id": "chargers-android",
+      "images": [
+        "images/chargers/chargers-android-1.jpg"
+      ],
+      "name": "Android Adapters & Cables",
+      "pricing": []
+    }
+  ]
+}

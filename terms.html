@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <title>Terms &amp; Conditions — ST Galaxy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600&family=Orbitron:wght@500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/site.css"/>
+  <style>
+    :root{
+      --bg:#020203;
+      --glass-border:rgba(255,255,255,0.12);
+      --text:#eef0ff;
+      --text-muted:#7a7a9a;
+      --cyan:#00e8ff;
+      --violet:#8b5cf6;
+      --glass-blur:blur(22px) saturate(200%);
+      --glow-cyan:0 0 30px rgba(0,232,255,0.35);
+    }
+    *{ margin:0; padding:0; box-sizing:border-box; }
+    body{ font-family:'Exo 2', system-ui, sans-serif; background:var(--bg); color:var(--text); min-height:100vh; }
+    .bg-orbs{ position:fixed; inset:0; z-index:0; pointer-events:none; }
+    .bg-orbs span{ position:absolute; border-radius:50%; filter:blur(80px); }
+    .bg-orbs span:nth-child(1){ width:400px; height:400px; background:rgba(0,232,255,0.16); top:-8%; left:-10%; }
+    .bg-orbs span:nth-child(2){ width:360px; height:360px; background:rgba(139,92,246,0.2); bottom:10%; right:-8%; }
+    .bg-grid{
+      position:fixed; inset:0; z-index:0; pointer-events:none;
+      background-image:
+        linear-gradient(rgba(0,232,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,232,255,0.03) 1px, transparent 1px);
+      background-size:48px 48px;
+    }
+    body > *:not(.bg-orbs):not(.bg-grid):not(.mobile-tabbar):not(#mobile-tabbar):not(.legal-notice){ position:relative; z-index:1; }
+    body > nav:first-of-type{
+      display:flex; justify-content:space-between; align-items:center;
+      padding:16px 8%; margin:12px 4% 0; border-radius:16px;
+      background:rgba(255,255,255,0.03); backdrop-filter:var(--glass-blur);
+      border:1px solid var(--glass-border); box-shadow:var(--glow-cyan);
+    }
+    body > nav:first-of-type h1{
+      font-family:'Orbitron', sans-serif; font-size:1.2rem;
+      background:linear-gradient(90deg, var(--cyan), var(--violet));
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+    }
+    .nav-links{ display:flex; gap:16px; }
+    body > nav:first-of-type a{ color:var(--text-muted); text-decoration:none; text-transform:uppercase; letter-spacing:0.08em; font-size:0.9rem; }
+    body > nav:first-of-type a:hover{ color:var(--cyan); }
+    .container{ max-width:720px; margin:0 auto; padding:36px 20px 40px; }
+    .about-panel{
+      padding:32px 28px; border-radius:20px;
+      background:rgba(255,255,255,0.04); backdrop-filter:var(--glass-blur);
+      border:1px solid var(--glass-border);
+    }
+    .about-panel h2{
+      font-family:'Orbitron', sans-serif; font-size:clamp(1.4rem, 4vw, 1.85rem); margin-bottom:8px;
+      background:linear-gradient(90deg, var(--cyan), var(--violet));
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+    }
+    .about-section{ margin-bottom:28px; padding-bottom:24px; border-bottom:1px solid rgba(255,255,255,0.08); }
+    .about-section:last-of-type{ border-bottom:none; margin-bottom:0; padding-bottom:0; }
+    .about-section h3{
+      font-family:'Orbitron', sans-serif; font-size:0.8rem; letter-spacing:0.12em;
+      text-transform:uppercase; color:var(--text-muted); margin-bottom:12px;
+    }
+    .about-section p, .about-section li{ font-size:1rem; line-height:1.75; color:#c8c8de; }
+    .about-section ul{ list-style:none; }
+    .about-section li{ padding:4px 0; }
+  </style>
+</head>
+<body>
+
+  <div class="bg-orbs" aria-hidden="true"><span></span><span></span></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <nav>
+    <a href="index.html" class="brand">
+      <div class="img-slot logo-slot">
+        <picture>
+          <source srcset="images/staticunchange/logo.webp" type="image/webp"/>
+          <img src="images/staticunchange/logo.jpeg" alt="ST Galaxy logo" loading="eager" onload="this.closest('.img-slot').classList.add('has-image')" onerror="this.style.display='none'"/>
+        </picture>
+        <span class="slot-hint">Logo</span>
+      </div>
+      <h1>ST Galaxy</h1>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <article class="about-panel">
+      <h2>Terms &amp; Conditions</h2>
+      <p class="legal-intro">
+        We are a locally-owned phone accessories retailer operating from Nagaland, India.
+        We are not affiliated with any large technology company.
+        These terms are here to set clear, fair expectations when you browse our site or place an order with us.
+      </p>
+      <p class="legal-updated">Last updated: June 2026</p>
+
+      <section class="about-section legal-section">
+        <h3>Using this website</h3>
+        <p>
+          By using stgalaxy.shop (or our related pages), you agree to these terms and our
+          <a href="privacy.html">Privacy Policy</a>.
+          Please don't misuse the site — no hacking, scraping, or copying content for commercial use without permission.
+        </p>
+      </section>
+
+      <section class="about-section legal-section">
+        <h3>Orders &amp; pricing</h3>
+        <ul>
+          <li>Orders are placed through WhatsApp (or as we agree with you directly).</li>
+          <li>Prices shown on the website are guides — final price is confirmed when we reply on chat.</li>
+          <li>An order is confirmed only after we accept it and you agree on payment and delivery.</li>
+          <li>We may update prices, stock, or product listings at any time.</li>
+        </ul>
+      </section>
+
+      <section class="about-section legal-section">
+        <h3>Products &amp; images</h3>
+        <p>
+          We do our best to describe products accurately. Colours, packaging, or minor details
+          may vary slightly from photos. Some images are for illustration; the actual item
+          you receive is what we confirm with you before dispatch.
+        </p>
+      </section>
+
+      <section class="about-section legal-section">
+        <h3>Payment, delivery &amp; pickup</h3>
+        <p>
+          Payment method, delivery area, shipping cost, and timing are arranged on WhatsApp.
+          Please share a correct address and active phone number so we can reach you.
+        </p>
+      </section>
+
+      <section class="about-section legal-section">
+        <h3>Warranty &amp; returns</h3>
+        <p>
+          Warranty (if any) is as stated for each product when you buy.
+          If something arrives damaged or faulty, contact us as soon as you can —
+          we'll review it fairly and work with you on a repair or replacement where appropriate.
+        </p>
+        <p style="margin-top:12px">
+          You can check the item when the delivery guy hands it over.
+          If you don’t like it, you can reject it right there.
+          Delivery charges still apply even if you reject.
+          At the moment, our warranty applies only to certain locations. 
+          We’re expanding coverage, so stay tuned for updates in your area.
+        </p>
+      </section>
+
+      <section class="about-section legal-section">
+        <h3>Wholesale</h3>
+        <p>
+          Wholesale orders may have separate minimum quantities, pricing, and terms —
+          we'll confirm those with you in chat before you pay.
+        </p>
+      </section>
+
+      <section class="about-section legal-section">
+        <h3>Customer group &amp; offers</h3>
+        <p>
+          If you buy any products from us, you get access to our Customers-Only group where we use that
+          for updates on offers and giveaways only for our customers.
+          Participation is optional — you can leave the group whenever you like.
+          We may change or end promotions at any time.
+        </p>
+      </section>
+
+      <section class="about-section legal-section">
+        <h3>External services</h3>
+        <p>
+          Links to WhatsApp, Instagram, or other sites are provided for convenience.
+          Those platforms have their own terms and policies, which apply when you use them.
+        </p>
+      </section>
+
+      <section class="about-section legal-section">
+        <h3>Limitation of liability</h3>
+        <p>
+          We run this site in good faith as a small business. We are not responsible for
+          indirect or unexpected losses beyond what Indian law requires.
+          The site is provided "as is" — we don't guarantee it will always be error-free or uninterrupted.
+        </p>
+      </section>
+
+      <section class="about-section legal-section">
+        <h3>Changes &amp; contact</h3>
+        <p>
+          We may update these terms occasionally. Continued use of the site after changes
+          means you accept the updated version.
+        </p>
+        <p style="margin-top:12px">
+          Questions? Reach us anytime:<br/>
+          Email: <a href="mailto:sosokachui@gmail.com">sosokachui@gmail.com</a><br/>
+          WhatsApp: <a href="https://wa.me/919089030805" target="_blank" rel="noopener noreferrer">+91 90890 30805</a>
+        </p>
+        <p style="margin-top:12px">
+          These terms are governed by the laws of India. Any disputes will be handled in good faith,
+          and where needed, through appropriate courts in India.
+        </p>
+      </section>
+
+      <a href="index.html" class="legal-back">← Back to home</a>
+    </article>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <nav id="mobile-tabbar" class="mobile-tabbar" aria-label="Mobile navigation"></nav>
+  <script src="js/site.js"></script>
+</body>
+</html>
